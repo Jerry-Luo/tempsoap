@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SetWorkerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workerInfo" type="tns:WorkerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WorkerInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idCardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="corpCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="corpId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="teamId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="workerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isTeamLeader" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="workRole" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="workType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="corpType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="gender" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="birthday" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="faceImage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cellPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="verifyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="leaderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="leaderPhoneNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="healthImg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="healthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="livingAdress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emergencyContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emergencyPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bank" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankIDCard" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetWorkerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetWorkerInfoResult" type="tns:ProcessedResultsOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProcessedResultsOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InstanceID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MessageHeader" type="tns:MessageHeader" />
+      <s:complexType name="MessageHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="UploadCardRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardRecord" type="tns:CardRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CardRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idCardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="deviceSn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="deviceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="direction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="attendType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadCardRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadCardRecordResult" type="tns:ProcessedResultsOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadLocationInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="locationInfo" type="tns:LocationInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LocationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idCard" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="personType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="project" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="personCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="locationType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lng" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadLocationInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadLocationInfoResult" type="tns:ProcessedResultsOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SetWorkerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetWorkerInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetWorkerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetWorkerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetWorkerInfoMessageHeader">
+    <wsdl:part name="MessageHeader" element="tns:MessageHeader" />
+  </wsdl:message>
+  <wsdl:message name="UploadCardRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadCardRecord" />
+  </wsdl:message>
+  <wsdl:message name="UploadCardRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadCardRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadCardRecordMessageHeader">
+    <wsdl:part name="MessageHeader" element="tns:MessageHeader" />
+  </wsdl:message>
+  <wsdl:message name="UploadLocationInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadLocationInfo" />
+  </wsdl:message>
+  <wsdl:message name="UploadLocationInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadLocationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadLocationInfoMessageHeader">
+    <wsdl:part name="MessageHeader" element="tns:MessageHeader" />
+  </wsdl:message>
+  <wsdl:portType name="StaffWebServiceSoap">
+    <wsdl:operation name="SetWorkerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">人员信息录入接口。</wsdl:documentation>
+      <wsdl:input message="tns:SetWorkerInfoSoapIn" />
+      <wsdl:output message="tns:SetWorkerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadCardRecord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传工人考勤信息。</wsdl:documentation>
+      <wsdl:input message="tns:UploadCardRecordSoapIn" />
+      <wsdl:output message="tns:UploadCardRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadLocationInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传定位信息接口。</wsdl:documentation>
+      <wsdl:input message="tns:UploadLocationInfoSoapIn" />
+      <wsdl:output message="tns:UploadLocationInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StaffWebServiceSoap" type="tns:StaffWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetWorkerInfo">
+      <soap:operation soapAction="http://tempuri.org/SetWorkerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetWorkerInfoMessageHeader" part="MessageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadCardRecord">
+      <soap:operation soapAction="http://tempuri.org/UploadCardRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadCardRecordMessageHeader" part="MessageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadLocationInfo">
+      <soap:operation soapAction="http://tempuri.org/UploadLocationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadLocationInfoMessageHeader" part="MessageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StaffWebServiceSoap12" type="tns:StaffWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetWorkerInfo">
+      <soap12:operation soapAction="http://tempuri.org/SetWorkerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetWorkerInfoMessageHeader" part="MessageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadCardRecord">
+      <soap12:operation soapAction="http://tempuri.org/UploadCardRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadCardRecordMessageHeader" part="MessageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadLocationInfo">
+      <soap12:operation soapAction="http://tempuri.org/UploadLocationInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadLocationInfoMessageHeader" part="MessageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StaffWebService">
+    <wsdl:port name="StaffWebServiceSoap" binding="tns:StaffWebServiceSoap">
+      <soap:address location="http://122.189.155.124:733/StaffWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StaffWebServiceSoap12" binding="tns:StaffWebServiceSoap12">
+      <soap12:address location="http://122.189.155.124:733/StaffWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
